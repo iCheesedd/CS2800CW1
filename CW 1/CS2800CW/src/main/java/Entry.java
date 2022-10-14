@@ -1,5 +1,9 @@
 /**
  * Entry class used for 'Stack' item entries
+ * multiple constructors for multiple entry types
+ * 
+ * methods for obtaining the type, symbol, value, string for the entry
+ * exception handling based on the entry type
  * 
  * @author ZKAC297 Peter Ostenfeld
  */
@@ -21,7 +25,7 @@ public class Entry {
         this.number = value;
         this.other = Symbol.INVALID;
         this.type = Type.NUMBER;
-        this.str = null;
+        this.str = "";
 
     }
 
@@ -34,7 +38,7 @@ public class Entry {
     public Entry(Symbol which) {
 
         this.number = 0;
-        this.str = null;
+        this.str = "";
         this.type = Type.SYMBOL;
         this.other = which;
 
@@ -70,8 +74,8 @@ public class Entry {
      */
     public String getString() throws BadType {
         
-        if (this.str.equals(null)) {
-            throw new BadType("NULL STRING");
+        if (this.str.isEmpty()) {
+            throw new BadType((String) "NULL STRING");
         }
         return this.str;
     }

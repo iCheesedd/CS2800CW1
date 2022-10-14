@@ -3,6 +3,11 @@ import java.util.List;
  * The stack class emulates the behaviour of a stack queue system
  * contains relevant methods for a stack (pop, push, size) etc
  * 
+ * exception handling if the stack is empty
+ *  popping from an empty stack
+ *  retrieving the top item from an empty stack
+ *  
+ * 
  * @author ZKAC297 Peter Ostenfeld
  */
 public class Stack {
@@ -45,7 +50,7 @@ public class Stack {
         if (this.size() == 0) {
             throw new EmptyStack("EMPTY STACK");
         }
-        Entry popped = this.entries.get(this.size() -1);
+        Entry popped = this.top();
         this.entries.remove(this.size() -1);
         this.size -= 1;
         return popped;

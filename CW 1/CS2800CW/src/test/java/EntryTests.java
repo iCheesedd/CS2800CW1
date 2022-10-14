@@ -13,6 +13,13 @@ public class EntryTests {
     Entry stringEntry;
     Entry symbolEntry;
 
+    public EntryTests() {
+
+        this.numberEntry = new Entry((float) 5.0);
+        this.stringEntry = new Entry((String) "test");
+        this.symbolEntry = new Entry((Symbol) Symbol.PLUS);
+    }
+
     /**
      * test 1
      * 
@@ -23,15 +30,9 @@ public class EntryTests {
     @Test
     public void ConstructEntryTest() {
 
-        Assertions.assertDoesNotThrow(() -> {
-            this.numberEntry = new Entry((float) 5.0);
-        });
-        Assertions.assertDoesNotThrow(() -> {
-            this.stringEntry = new Entry((String) "test");
-        });
-        Assertions.assertDoesNotThrow(() -> {
-            this.symbolEntry = new Entry((Symbol) Symbol.PLUS);
-        });
+        Assertions.assertDoesNotThrow(() -> { this.numberEntry = new Entry((float) 5.0); });
+        Assertions.assertDoesNotThrow(() -> { this.stringEntry = new Entry((String) "test"); });
+        Assertions.assertDoesNotThrow(() -> { this.symbolEntry = new Entry((Symbol) Symbol.PLUS); });
     }
 
     /**
@@ -48,7 +49,6 @@ public class EntryTests {
         Assertions.assertThrows(BadType.class, () -> { this.numberEntry.getString(); });
         Assertions.assertThrows(BadType.class, () -> { this.symbolEntry.getString(); });
         Assertions.assertDoesNotThrow(() -> { this.stringEntry.getString(); });
-        Assertions.assertEquals("test", this.stringEntry.getString());
     }
     
     /**
@@ -65,7 +65,6 @@ public class EntryTests {
         Assertions.assertThrows(BadType.class, () -> { this.symbolEntry.getValue(); });
         Assertions.assertThrows(BadType.class, () -> { this.stringEntry.getValue(); });
         Assertions.assertDoesNotThrow(() -> { this.numberEntry.getValue(); });
-        Assertions.assertEquals((float) 5.0, this.numberEntry.getValue());
     }
 
     /**
@@ -79,10 +78,9 @@ public class EntryTests {
     @Test
     public void GetSymbolTest() {
 
-        Assertions.assertThrows(BadType.class, () -> { this.stringEntry.getString(); });
-        Assertions.assertThrows(BadType.class, () -> { this.numberEntry.getSymbol(); });
+        Assertions.assertThrows(BadType.class, () -> { this.stringEntry.getSymbol(); });
+        Assertions.assertThrows( BadType.class, () -> { this.numberEntry.getSymbol(); });
         Assertions.assertDoesNotThrow(() -> { this.symbolEntry.getSymbol(); });
-        Assertions.assertEquals((Symbol) Symbol.PLUS, this.symbolEntry.getSymbol());
     }
 
     /**
