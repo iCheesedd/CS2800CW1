@@ -1,50 +1,79 @@
+import java.util.List;
 /**
+ * The stack class emulates the behaviour of a stack queue system
+ * contains relevant methods for a stack (pop, push, size) etc
  * 
  * @author ZKAC297 Peter Ostenfeld
  */
 public class Stack {
 
-    Entry Next;
-    Entry TopItem;
-    int Size;
+    int size;
+    List<Entry> entries;
 
     /**
-     * Generic class constructor for 'Stack' class
+     * Generic constructor method for stack class
+     * 
+     * @param initial entries stack to construct
      */
-    public Stack () {
+    public Stack(List<Entry> entries) {
 
-        this.Size = 0;
-        this.TopItem = null;
+        this.entries = entries;
+        this.size = entries.size();
     }
 
     /**
-     * Generic push method (pushes a new item onto the top of the 'Stack')
+     * Push method for a stack queue
+     * pushes new entries onto the top of the stack
      * 
-     * @param NewEntry the new item to be pushed onto the 'Stack'
+     * @param an new entry i to push onto the stack
      */
-    public void Push(Entry NewEntry) {
+    public void push(Entry i) {
 
-        this.Size += 1;
+        entries.add(i);
+        this.size += 1;
     }
 
     /**
-     * Generic pop method (pops the top item of the 'Stack')
+     * Pop method for stack queue
+     * pops the latest entry of the top of the stack
      * 
-     * @return the popped item from the top of the 'Stack'
+     * @return the entry popped from the top of the stack
+     * @throws empty stack EmptyStack
      */
-    public Entry Pop() {
+    public Entry pop() throws EmptyStack {
 
-        this.Size -= 1;
-        return this.TopItem;
+        if (this.size() == 0) {
+            throw new EmptyStack("EMPTY STACK");
+        }
+        Entry popped = this.entries.get(this.size() -1);
+        this.entries.remove(this.size() -1);
+        this.size -= 1;
+        return popped;
     }
 
     /**
-     * Provides the current top 'EntryItem' on the 'Stack'
+     * Top method for stack queue
+     * outputs the latest item on the top of the stack
      * 
-     * @return the current 'Stacks' top item
+     * @return the latest item on the top of the stack
+     * @throws empty stack EmptyStack
      */
-    public Entry Top() {
+    public Entry top() throws EmptyStack {
 
-        return this.TopItem;
+        if(this.size() == 0) {
+            throw new EmptyStack("EMPTY STACK");
+        }
+        return this.entries.get(this.size() -1 );
+    }
+
+    /**
+     * Size method for stack queue
+     * outputs the current size of the stack
+     * 
+     * @return the size of the stack
+     */
+    public int size() {
+
+        return this.size;
     }
 }
