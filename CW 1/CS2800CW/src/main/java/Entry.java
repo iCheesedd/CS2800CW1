@@ -10,7 +10,6 @@ public class Entry {
     public String str;
     public Type type;
 
-
     /**
      * Generic float constructor for 'Entry' class
      * 
@@ -74,7 +73,7 @@ public class Entry {
         if (this.str.equals(null)) {
             throw new BadType("NULL STRING");
         }
-        return this.str; 
+        return this.str;
     }
 
     /**
@@ -97,27 +96,14 @@ public class Entry {
      * 
      * @return the 'number' for the current 'Entry'
      * 
-     */
-    public float getValue() { return this.number; }
-}
-
-/**
- * Generic 'BadType' exception class
- * 
- * @author ZKAC297 Peter Ostenfeld
- */
-class BadType extends Exception {
-
-    public String message;
-
-    /**
-     * Generic constructor for 'BadType' exception class
+     * @exception invalid number BadType
      * 
-     * @param the errorMessage as a string
      */
-    public BadType(String error) {
-
-        super(error);
-        this.message = error;
+    public float getValue() throws BadType {
+        
+        if (this.type != Type.NUMBER) {
+            throw new BadType("INVALID NUMBER");
+        }
+        return this.number;
     }
 }
