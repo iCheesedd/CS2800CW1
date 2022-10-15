@@ -46,8 +46,8 @@ public class EntryTests {
     @Test
     public void GetStringTest() {
 
-        Assertions.assertThrows(BadType.class, () -> { this.numberEntry.getString(); });
-        Assertions.assertThrows(BadType.class, () -> { this.symbolEntry.getString(); });
+        Assertions.assertThrows(BadTypeException.class, () -> { this.numberEntry.getString(); });
+        Assertions.assertThrows(BadTypeException.class, () -> { this.symbolEntry.getString(); });
         Assertions.assertDoesNotThrow(() -> { this.stringEntry.getString(); });
     }
     
@@ -62,8 +62,8 @@ public class EntryTests {
     @Test
     public void GetValueTest() {
 
-        Assertions.assertThrows(BadType.class, () -> { this.symbolEntry.getValue(); });
-        Assertions.assertThrows(BadType.class, () -> { this.stringEntry.getValue(); });
+        Assertions.assertThrows(BadTypeException.class, () -> { this.symbolEntry.getValue(); });
+        Assertions.assertThrows(BadTypeException.class, () -> { this.stringEntry.getValue(); });
         Assertions.assertDoesNotThrow(() -> { this.numberEntry.getValue(); });
     }
 
@@ -78,8 +78,8 @@ public class EntryTests {
     @Test
     public void GetSymbolTest() {
 
-        Assertions.assertThrows(BadType.class, () -> { this.stringEntry.getSymbol(); });
-        Assertions.assertThrows( BadType.class, () -> { this.numberEntry.getSymbol(); });
+        Assertions.assertThrows(BadTypeException.class, () -> { this.stringEntry.getSymbol(); });
+        Assertions.assertThrows( BadTypeException.class, () -> { this.numberEntry.getSymbol(); });
         Assertions.assertDoesNotThrow(() -> { this.symbolEntry.getSymbol(); });
     }
 

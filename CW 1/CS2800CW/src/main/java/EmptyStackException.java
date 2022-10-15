@@ -1,18 +1,18 @@
 /**
- * Generic 'BadType' exception class
+ * Generic EmptyStack exception class
  * 
  * @author ZKAC297 Peter Ostenfeld
  */
-public class BadType extends Exception {
+public class EmptyStackException extends Exception {
 
     public String message;
 
     /**
-     * Generic constructor for 'BadType' exception class
+     * Generic constructor for EmptyStackException class
      * 
      * @param an error message as a string
      */
-    public BadType(String error) {
+    public EmptyStackException(String error) {
 
         super(error);
         this.message = error;

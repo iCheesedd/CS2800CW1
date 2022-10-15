@@ -72,10 +72,10 @@ public class Entry {
      * 
      * @exception null string BadType
      */
-    public String getString() throws BadType {
+    public String getString() throws BadTypeException {
         
         if (this.str.isEmpty()) {
-            throw new BadType((String) "NULL STRING");
+            throw new BadTypeException((String) "NULL STRING");
         }
         return this.str;
     }
@@ -87,10 +87,10 @@ public class Entry {
      * 
      * @exception invalid symbol BadType
      */
-    public Symbol getSymbol() throws BadType {
+    public Symbol getSymbol() throws BadTypeException {
         
         if (this.other == Symbol.INVALID) {
-            throw new BadType("INVALID SYMBOL");
+            throw new BadTypeException("INVALID SYMBOL");
         }
         return this.other;
     }
@@ -103,10 +103,10 @@ public class Entry {
      * @exception invalid number BadType
      * 
      */
-    public float getValue() throws BadType {
+    public float getValue() throws BadTypeException {
         
         if (this.type != Type.NUMBER) {
-            throw new BadType("INVALID NUMBER");
+            throw new BadTypeException("INVALID NUMBER");
         }
         return this.number;
     }

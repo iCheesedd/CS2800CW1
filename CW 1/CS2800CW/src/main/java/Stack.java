@@ -45,10 +45,10 @@ public class Stack {
      * @return the entry popped from the top of the stack
      * @throws empty stack EmptyStack
      */
-    public Entry pop() throws EmptyStack {
+    public Entry pop() throws EmptyStackException {
 
         if (this.size() == 0) {
-            throw new EmptyStack("EMPTY STACK");
+            throw new EmptyStackException("EMPTY STACK");
         }
         Entry popped = this.top();
         this.entries.remove(this.size() -1);
@@ -63,10 +63,10 @@ public class Stack {
      * @return the latest item on the top of the stack
      * @throws empty stack EmptyStack
      */
-    public Entry top() throws EmptyStack {
+    public Entry top() throws EmptyStackException {
 
         if(this.size() == 0) {
-            throw new EmptyStack("EMPTY STACK");
+            throw new EmptyStackException("EMPTY STACK");
         }
         return this.entries.get(this.size() -1 );
     }
