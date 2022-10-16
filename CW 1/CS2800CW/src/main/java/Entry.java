@@ -98,7 +98,7 @@ public class Entry {
     /**
      * Get value method for 'Entry' class
      * 
-     * @return the 'number' for the current 'Entry'
+     * @return the number for the current Entry
      * 
      * @exception invalid number BadType
      * 
@@ -109,5 +109,17 @@ public class Entry {
             throw new BadTypeException("INVALID NUMBER");
         }
         return this.number;
+    }
+
+    /**
+     * Check if an entry is directly equal to the current entry
+     * 
+     * @param the entry to compare to the current entry (i)
+     * 
+     * @return the boolean result of the comparison of 2 entries
+     */
+    public boolean equal(Entry i) {
+
+        return (i.toString().equals(this.toString()));
     }
 }
