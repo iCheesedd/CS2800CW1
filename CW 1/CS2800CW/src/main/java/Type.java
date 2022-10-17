@@ -1,5 +1,5 @@
 /**
- * Enumorator for a series of possible Types
+ * Enumerator for a series of possible Types
  * 
  * @author ZKAC297 Peter Ostenfeld
  */

@@ -12,7 +12,11 @@ public class EntryTests {
     Entry numberEntry;
     Entry stringEntry;
     Entry symbolEntry;
-
+    
+    /**
+     * Generic constructor for EntryTests class
+     * constructs 3 different entries for use in testing
+     */
     public EntryTests() {
 
         this.numberEntry = new Entry((float) 5.0);

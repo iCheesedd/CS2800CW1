@@ -43,7 +43,7 @@ public class Stack {
      * pops the latest entry of the top of the stack
      * 
      * @return the entry popped from the top of the stack
-     * @throws empty stack EmptyStack
+     * @throws empty stack EmptyStackException
      */
     public Entry pop() throws EmptyStackException {
 
@@ -61,7 +61,7 @@ public class Stack {
      * outputs the latest item on the top of the stack
      * 
      * @return the latest item on the top of the stack
-     * @throws empty stack EmptyStack
+     * @throws empty stack EmptyStackException
      */
     public Entry top() throws EmptyStackException {
 

@@ -1,5 +1,5 @@
 /**
- * Enumorator for a series of possible Symbols
+ * Enumerator for a series of possible Symbols
  * 
  * * @author ZKAC297 Peter Ostenfeld
  */

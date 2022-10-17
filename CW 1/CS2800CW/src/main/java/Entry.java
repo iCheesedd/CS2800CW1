@@ -1,9 +1,7 @@
 /**
- * Entry class used for 'Stack' item entries
- * multiple constructors for multiple entry types
- * 
- * methods for obtaining the type, symbol, value, string for the entry
- * exception handling based on the entry type
+ * Entry class used for Stack item entries multiple constructors for multiple entry types
+ * Methods for obtaining the type, symbol, value, string for the entry
+ * Exception handling based on the entry type
  * 
  * @author ZKAC297 Peter Ostenfeld
  */
@@ -15,9 +13,9 @@ public class Entry {
     public Type type;
 
     /**
-     * Generic float constructor for 'Entry' class
+     * Generic float constructor for the Entry class
      * 
-     * @param a 'value' of type 'float'
+     * @param value, a value of type float
      * 
      */
     public Entry(float value) {
@@ -30,9 +28,9 @@ public class Entry {
     }
 
     /**
-     * Generic Symbol constructor for 'Entry' class
+     * Generic Symbol constructor for the Entry class
      * 
-     * @param a 'which' of type 'Symbol'
+     * @param which, a value of type Symbol
      * 
      */
     public Entry(Symbol which) {
@@ -45,9 +43,9 @@ public class Entry {
     }
 
     /**
-     * Generic String constructor for 'Entry' class
+     * Generic String constructor for the Entry class
      * 
-     * @param 'string' of type 'String'
+     * @param string, a value of type String
      * 
      */
     public Entry(String string) {
@@ -59,18 +57,18 @@ public class Entry {
     }
 
     /**
-     * Get type method for 'Entry' class
+     * Get type method for the Entry class
      * 
-     * @return the 'type' of the current 'Entry'
+     * @return type, the type of the current the Entry
      */
     public Type getType() { return this.type; }
 
     /**
      * Get string method for 'Entry' class
      * 
-     * @return the 'string' for the current 'Entry'
+     * @return str, the string for the current Entry
      * 
-     * @exception null string BadType
+     * @exception null string BadTypeException
      */
     public String getString() throws BadTypeException {
         
@@ -81,11 +79,11 @@ public class Entry {
     }
 
     /**
-     * Get Symbol method for 'Entry' class
+     * GetSymbol method for the Entry class
      * 
-     * @return the 'symbol' for the current 'Entry'
+     * @return other, the symbol for the current Entry
      * 
-     * @exception invalid symbol BadType
+     * @exception invalid symbol BadTypeException
      */
     public Symbol getSymbol() throws BadTypeException {
         
@@ -96,11 +94,11 @@ public class Entry {
     }
 
     /**
-     * Get value method for 'Entry' class
+     * GetValue method for the Entry class
      * 
-     * @return the number for the current Entry
+     * @return number, the number for the current Entry
      * 
-     * @exception invalid number BadType
+     * @exception invalid number BadTypeException
      * 
      */
     public float getValue() throws BadTypeException {
@@ -112,9 +110,9 @@ public class Entry {
     }
 
     /**
-     * Check if an entry is directly equal to the current entry
+     * Check if another entry is equal to the current entry
      * 
-     * @param the entry to compare to the current entry (i)
+     * @param i, the entry to compare to the current entry
      * 
      * @return the boolean result of the comparison of 2 entries
      */
